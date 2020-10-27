@@ -2,6 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+    <p>
+      this is second change
+    </p>
   </div>
 </template>
 
