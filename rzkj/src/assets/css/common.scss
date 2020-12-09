@@ -1,0 +1,143 @@
+@charset "utf-8";
+@function px2rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+@mixin font-dpr($font-size) {
+  font-size: $font-size !important;
+  [data-dpr="2"] & {
+    font-size: $font-size * 2 !important;
+  }
+  [data-dpr="3"] & {
+    font-size: $font-size * 3 !important;
+  }
+}
+
+$ac: #2B2B2B;
+$gc: #CFCFCF;
+
+.uc {
+  color: $ac !important;
+}
+
+.mescroll-upwarp, .downwarp-content {
+  background-color: #F6f6f6;
+}
+
+* {
+  font-size: 14px;
+  line-height: normal !important;
+  font-family: PingFangSC-Regular, PingFang SC, Arial, Helvetica, sans-seri;
+}
+
+p, input, textarea {
+  margin-bottom: 0;
+}
+
+.goods-text {
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.mui-popup-button {
+  line-height: 44px !important;
+}
+
+.active-text-color {
+  color: $ac !important;
+}
+
+.fill {
+  height: 100%;
+}
+
+.n-p-t {
+  padding-top: 0 !important;
+}
+
+.scroll-wrapper {
+  flex: 1;
+  z-index: 1;
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+
+  .scroll-content {
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+    user-select: none;
+    box-sizing: border-box;
+  }
+}
+
+.mui-show-loading {
+  position: fixed;
+  padding: 5px;
+  width: 120px;
+  min-height: 120px;
+  top: 45%;
+  left: 50%;
+  margin-left: -60px;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  border-radius: 5px;
+  color: #FFFFFF;
+  visibility: hidden;
+  margin: 0;
+  z-index: 2000;
+
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  opacity: 0;
+  -webkit-transform: scale(0.9) translate(-50%, -50%);
+  transform: scale(0.9) translate(-50%, -50%);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.mui-show-loading.loading-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1) translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%);
+}
+
+.mui-show-loading .mui-spinner {
+  margin-top: 24px;
+  width: 36px;
+  height: 36px;
+}
+
+.mui-show-loading .text {
+  line-height: 1.6;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  margin: 10px 0 0;
+  color: #fff;
+}
+
+.mui-show-loading-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.mui-show-loading-mask-hidden {
+  display: none !important;
+}
+
+#code {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
